@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwiftMail</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="/public/mail.svg" />
+    <link rel="stylesheet" href="index.css" />
+    <script type="module" src="index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="navbar-container">
+        <div class="logo-container">
+          <img src="./public/menu.svg" height="30px" width="60px" />
+          <img src="./public/mail.svg" height="30px" width="30px" />
+          <h4>SwiftMail</h4>
+        </div>
+        <div class="search-container">
+          <img src="./public/search.svg" />
+          <input placeholder="search" class="search-input" />
+        </div>
+        <div class="profile-icon-container">
+          <img
+            src="./public/settings.svg"
+            height="23px"
+            width="23px"
+            class="cursor-pointer"
+          />
+          <img
+            src="./public/user.png"
+            height="23px"
+            width="23px"
+            style="margin-left: 10px"
+            class="cursor-pointer"
+          />
+        </div>
+      </nav>
+      <div class="section-container">
+        <aside class="sidebar-container">
+          <div class="d-flex compose-icon-container">
+            <img src="./public/pencil (2).svg" height="15px" width="15px" />
+            <span class="compose">Compose</span>
+          </div>
+          <ul id="sidebar-list" class="un-ordered-list">
+            <li id="inbox">
+              <img src="./public/inbox (2).svg" height="17px" width="17px" />
+              Inbox
+            </li>
+            <li id="starred">
+              <img src="./public/star.svg" height="17px" width="17px" />
+              Starred
+            </li>
+            <li id="sent">
+              <img
+                src="./public/paper-plane-top.svg"
+                height="15px"
+                width="15px"
+              />
+              Sent
+            </li>
+            <li id="important">
+              <img
+                src="./public/angle-square-right.svg"
+                height="15px"
+                width="15px"
+              />
+              Important
+            </li>
+            <li id="spam">
+              <img
+                src="./public/hexagon-exclamation.svg"
+                height="17px"
+                width="17px"
+              />Spam
+            </li>
+            <li id="trash">
+              <img src="./public/trash (3).svg" height="17px" width="17px" />
+              Trash
+            </li>
+          </ul>
+        </aside>
+        <div class="content-container">
+          <div class="checkbox-container">
+            <input type="checkbox" />
+            <img src="./public/rotate-right.svg" height="13px" width="13px" />
+          </div>
+          <ul class="un-ordered-list inbox-items-container">
+            <li id="primary">
+              <img src="./public/inbox (2).svg" height="17px" width="17px" />
+              Primary
+            </li>
+            <li id="promotions">
+              <img src="./public/tags.svg" height="17px" width="17px" />
+              Promotions
+            </li>
+            <li id="social">
+              <img src="./public/users (1).svg" height="17px" width="17px" />
+              Social
+            </li>
+            <li id="updates">
+              <img src="./public/info.svg" height="17px" width="17px" />
+              Updates
+            </li>
+          </ul>
+          <div class="mails-list-container"></div>
+        </div>
+      </div>
+      <div class="compose-mail-content-container d-none">
+        <div class="compose-mail-header">
+          <span>New Message</span>
+          <div class="items-center">
+            <img
+              class="header-item"
+              src="./public/minimize.png"
+              height="17px"
+              width="17px"
+              style="position: relative; top: 6px"
+            />
+            <img
+              class="header-item"
+              src="./public/expand.png"
+              height="17px"
+              width="17px"
+            />
+            <img
+              class="header-item"
+              src="/public/close.png"
+              height="17px"
+              width="17px"
+              id="close"
+            />
+          </div>
+        </div>
+        <div class="mail-data-container">
+          <input
+            id="recipients"
+            class="d-flex input"
+            style="width: 100%"
+            placeholder="Recipients"
+          />
+          <input
+            id="subject"
+            class="d-flex input"
+            style="width: 100%"
+            placeholder="Subject"
+          />
+          <div id="editor"></div>
+          <button id="send-button">Send</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
